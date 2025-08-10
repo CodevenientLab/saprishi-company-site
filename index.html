@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saprishi (Pty) Ltd</title>
+  <logo rel="icon" href="images/SAPRISHI_Logo_Transparent.png" type="image/png" />
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Saprishi — Glass, Aluminium & Projects. Precision installations across South Africa."/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo-link" href="#">
+        <img src="images/SAPRISHI_Logo.png" alt="Saprishi logo" class="logo-img" />
+      </a>
+
+      <nav class="nav" id="main-nav">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#work">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="headline">Precision in <span>Glass &amp; Aluminium</span></h1>
+          <p class="sub">Serving South Africa with excellence — clean installs, durable frames, on-time delivery.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Request a Quote</a>
+            <a class="btn btn-ghost" href="#work">View Projects</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="media-card reveal">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1400&auto=format&fit=crop" alt="Glass installation">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">What we do</h2>
+        <div class="cards-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">🪟</div>
+            <h3>Glass Fitting</h3>
+            <p>Windows, partitions and glass doors with precision installation.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🧰</div>
+            <h3>Aluminium Frames</h3>
+            <p>Custom aluminium windows and frames built for lasting performance.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">⚒️</div>
+            <h3>Commercial Projects</h3>
+            <p>Curtain walls, shopfronts and bespoke installations for businesses.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="work" class="section">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="portfolio-grid">
+          <div class="thumb reveal"><img src="images/scafold.jpg" alt="Project"></div>
+          <div class="thumb reveal"><img src="images/Window installation.jpg" alt="Project"></div>
+          <div class="thumb reveal"><img src="images/kitchen window.jpg" alt="Project"></div>
+          <div class="thumb reveal"><img src="images/Full house window installation.jpg" alt="Project"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <h2>Over a decade of precision craft</h2>
+          <p>Saki Morobe — Owner & Project Lead. We combine technical skill with premium materials to deliver elegant glass & aluminium solutions across South Africa.</p>
+          <ul class="trust-grid">
+            <li><strong>Fast Turnaround</strong><span>On-time delivery</span></li>
+            <li><strong>Premium Materials</strong><span>Top-grade frames & glass</span></li>
+            <li><strong>Nationwide Service</strong><span>Serving South Africa</span></li>
+          </ul>
+        </div>
+
+        <div class="about-media reveal">
+          <div class="portrait">
+            <img src="images/Saki.jpg" alt="Saki Morobe">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <h2>Contact Saki</h2>
+          <p>Ready to start? Tap the WhatsApp button for instant quotes or use the form.</p>
+          <ul class="plain-list">
+            <li>📞 <a href="tel:+27799592894">079 959 2894</a></li>
+            <li>📍 Serving South Africa</li>
+            <li>✉️ <span class="muted">email@replace.me</span></li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" method="POST" action="https://formspree.io/f/your-form-id">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="tel" name="phone" placeholder="Phone number" required>
+          <textarea name="message" rows="4" placeholder="Tell us about the job" required></textarea>
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© <strong>Saprishi (Pty) Ltd</strong></div>
+      <div class="small">Designed by Codevenient Consulting</div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating pulsing icon -->
+  <a class="whatsapp-float" href="https://wa.me/27799592894" target="_blank" aria-label="Contact on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -96,6 +96,62 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // Add lightbox functionality
+  document.querySelectorAll('.thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const img = thumb.querySelector('img');
+      if (!img) return;
+
+      const lightbox = document.createElement('div');
+      lightbox.className = 'lightbox';
+      lightbox.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 20px;
+      `;
+
+      const lightboxImg = document.createElement('img');
+      lightboxImg.src = img.src;
+      lightboxImg.style.cssText = `
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      `;
+
+      lightboxImg.onload = () => {
+        lightboxImg.style.opacity = '1';
+      };
+
+      lightbox.appendChild(lightboxImg);
+      document.body.appendChild(lightbox);
+
+      // Close lightbox when clicking outside the image
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.remove();
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          lightbox.remove();
+        }
+      });
+    });
+  });
 });
 
 

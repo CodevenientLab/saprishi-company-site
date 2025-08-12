@@ -17,10 +17,8 @@
 <body>
   <header class="site-header">
     <div class="container header-row">
-      <a class="logo-link" href="#">
-        <img src="images/SAPRISHI_Logo.png" alt="Saprishi logo" class="logo-img" />
-      </a>
-
+      <img src="images/SAPRISHI_Logo.png" alt="Logo" class="logo-img">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
       <nav class="nav" id="main-nav">
         <a href="#hero">Home</a>
         <a href="#services">Services</a>
@@ -28,10 +26,6 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
     </div>
   </header>
 
@@ -43,41 +37,40 @@
           <h1 class="headline">Precision in <span>Glass &amp; Aluminium</span></h1>
           <p class="sub">Serving South Africa with excellence — clean installs, durable frames, on-time delivery.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#contact">Request a Quote</a>
-            <a class="btn btn-ghost" href="#work">View Projects</a>
+            <a href="#contact" class="btn btn-primary">Request a Quote</a>
           </div>
         </div>
 
         <div class="hero-right">
           <div class="media-card reveal">
-            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1400&auto=format&fit=crop" alt="Glass installation">
+            <img src="images/Home_van.png" alt="Glass installation">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- What We Do Section -->
     <section id="services" class="section">
       <div class="container">
-        <h2 class="section-title">What we do</h2>
-        <div class="cards-grid">
-          <article class="service-card reveal">
-            <div class="service-icon">🪟</div>
-            <h3>Glass Fitting</h3>
-            <p>Windows, partitions and glass doors with precision installation.</p>
-          </article>
+        <h2 class="section-title">What We Do</h2>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <i class="service-icon fas fa-building"></i>
+            <h3 class="service-title">Commercial Installations</h3>
+            <p class="service-description">Professional glass and aluminium installations for commercial buildings, offices, and retail spaces.</p>
+          </div>
 
-          <article class="service-card reveal">
-            <div class="service-icon">🧰</div>
-            <h3>Aluminium Frames</h3>
-            <p>Custom aluminium windows and frames built for lasting performance.</p>
-          </article>
+          <div class="service-card reveal">
+            <i class="service-icon fas fa-home"></i>
+            <h3 class="service-title">Residential Solutions</h3>
+            <p class="service-description">Custom glass solutions for homes including windows, doors, and modern architectural features.</p>
+          </div>
 
-          <article class="service-card reveal">
-            <div class="service-icon">⚒️</div>
-            <h3>Commercial Projects</h3>
-            <p>Curtain walls, shopfronts and bespoke installations for businesses.</p>
-          </article>
+          <div class="service-card reveal">
+            <i class="service-icon fas fa-vector-square"></i>
+            <h3 class="service-title">Custom Projects</h3>
+            <p class="service-description">Specialized aluminum frameworks and custom glass installations tailored to your specifications.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -118,31 +111,56 @@
 
     <!-- Contact -->
     <section id="contact" class="section">
-      <div class="container contact-grid">
-        <div class="contact-info reveal">
-          <h2>Contact Saki</h2>
-          <p>Ready to start? Tap the WhatsApp button for instant quotes or use the form.</p>
-          <ul class="plain-list">
-            <li>📞 <a href="tel:+27799592894">079 959 2894</a></li>
-            <li>📍 Serving South Africa</li>
-            <li>✉️ <span class="muted">email@replace.me</span></li>
-          </ul>
-        </div>
-
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
         <form class="contact-form reveal" method="POST" action="https://formspree.io/f/your-form-id">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="tel" name="phone" placeholder="Phone number" required>
           <textarea name="message" rows="4" placeholder="Tell us about the job" required></textarea>
-          <button class="btn btn-primary" type="submit">Send</button>
+          <button class="btn btn-primary" type="submit">Send Message</button>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-row">
-      <div>© <strong>Saprishi (Pty) Ltd</strong></div>
-      <div class="small">Designed by Codevenient Consulting</div>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Company Info -->
+        <div class="footer-col">
+          <img src="images/SAPRISHI_Logo.png" alt="Saprishi Logo" class="footer-logo">
+          <p class="footer-desc">Precision in Glass & Aluminium installations across South Africa.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <nav class="footer-nav">
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#work">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h3>Our Services</h3>
+          <ul class="footer-services">
+            <li><i class="fas fa-check"></i> Glass Fitting</li>
+            <li><i class="fas fa-check"></i> Aluminium Frames</li>
+            <li><i class="fas fa-check"></i> Commercial Projects</li>
+            <li><i class="fas fa-check"></i> Window Installation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="copyright">© 2025 <strong>Saprishi (Pty) Ltd</strong></div>
+      </div>
     </div>
   </footer>
 
@@ -154,4 +172,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

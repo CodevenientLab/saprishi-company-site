@@ -113,11 +113,11 @@
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Get In Touch</h2>
-        <form class="contact-form reveal" method="POST" action="https://formspree.io/f/your-form-id">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="tel" name="phone" placeholder="Phone number" required>
-          <textarea name="message" rows="4" placeholder="Tell us about the job" required></textarea>
-          <button class="btn btn-primary" type="submit">Send Message</button>
+        <form class="contact-form reveal" id="whatsappForm" onsubmit="return sendWhatsApp(event)">
+          <input type="text" name="name" id="name" placeholder="Your name" required>
+          <input type="tel" name="phone" id="phone" placeholder="Phone number" required>
+          <textarea name="message" id="message" rows="4" placeholder="Tell us about the job" required></textarea>
+          <button class="btn btn-primary" type="submit">Send on WhatsApp</button>
         </form>
       </div>
     </section>
@@ -136,7 +136,6 @@
         <div class="footer-col">
           <h3>Quick Links</h3>
           <nav class="footer-nav">
-            <a href="#hero">Home</a>
             <a href="#services">Services</a>
             <a href="#work">Gallery</a>
             <a href="#about">About</a>

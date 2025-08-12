@@ -1,6 +1,5 @@
-
+// Smooth reveals, lightbox and nav toggle
 document.addEventListener('DOMContentLoaded', () => {
-  
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const el = document.querySelector(href);
       if (!el) return;
       e.preventDefault();
-      const offset = 84;
+      const offset = 84; // header height buffer
       const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({top, behavior: 'smooth'});
     });
@@ -45,96 +44,83 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Nav toggle for mobile
-  const navToggle = document.getElementById('nav-toggle');
-  const nav = document.getElementById('main-nav');
-  navToggle?.addEventListener('click', () => {
-    if (!nav) return;
-    if (nav.style.display === 'flex') {
-      nav.style.display = 'none';
-    } else {
-      nav.style.display = 'flex';
-      nav.style.flexDirection = 'column';
-      nav.style.gap = '12px';
-      nav.style.background = 'rgba(0,0,0,0.45)';
-      nav.style.padding = '12px';
-      nav.style.position = 'absolute';
-      nav.style.right = '24px';
-      nav.style.top = '74px';
-      nav.style.borderRadius = '8px';
-    }
-  });
-});
-
-const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    
+  // Single unified mobile menu handler
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  
+  if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
-        nav.classList.toggle('show');
+      nav.classList.toggle('show');
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
-            nav.classList.remove('show');
-        }
+      if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
+        nav.classList.remove('show');
+      }
     });
-
-// Header scroll effect
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
   }
-});
 
-// Image loading
-document.querySelectorAll('img').forEach(img => {
-  img.addEventListener('load', () => img.classList.add('loaded'));
-});
-
-// Form submission handling
-const form = document.querySelector('.contact-form');
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const button = form.querySelector('button');
-    button.classList.add('loading');
-    
-    try {
-      // Replace with your form handling logic
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      form.reset();
-      alert('Message sent successfully!');
-    } catch (err) {
-      alert('Error sending message. Please try again.');
-    } finally {
-      button.classList.remove('loading');
+  // Single unified scroll handler
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
   });
-}
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  const nav = document.querySelector('.nav');
-  const toggle = document.querySelector('.nav-toggle');
-  if (!nav.contains(e.target) && !toggle.contains(e.target)) {
-    nav.classList.remove('show');
-  }
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
+  // Single unified smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      const offset = 84; // header height buffer
       target.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
+    });
+  });
+
+  // Form submission handling
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const button = form.querySelector('button');
+      button.classList.add('loading');
+      
+      try {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        form.reset();
+        alert('Message sent successfully!');
+      } catch (err) {
+        alert('Error sending message. Please try again.');
+      } finally {
+        button.classList.remove('loading');
+      }
+    });
+  }
+
+  // Image loading
+  document.querySelectorAll('img').forEach(img => {
+    if (img.complete) {
+        img.classList.add('loaded');
+    } else {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
     }
+    
+    // Add error handling
+    img.addEventListener('error', () => {
+        console.error('Error loading image:', img.src);
+        img.classList.add('error');
+    });
   });
 });

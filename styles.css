@@ -59,7 +59,6 @@ body::before {
   z-index: 0;
 }
 
-/* Update glass effect backgrounds to match new theme */
 .service-card,
 .nav a:hover,
 .contact-form input,
@@ -71,7 +70,7 @@ body::before {
 /* Update header background */
 .site-header {
   background: linear-gradient(180deg,rgba(28,28,28,0.95),rgba(26,26,26,0.85));
-  backdrop-filter: blur(10px);
+ 
 }
 
 /* Update footer background */
@@ -102,7 +101,7 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg-1),var
 .headline{font-family:Poppins;font-size:44px;margin:0 0 10px;line-height:1.05;color:#fff}
 .headline span{color:var(--gold)}
 .sub{color:rgba(255,255,255,0.75);margin-bottom:18px;max-width:620px}
-.cta-row{display:flex;justify-content:flex-start;  /* Left align in desktop */margin-top:24px}
+.cta-row{display:flex;justify-content:flex-start; margin-top:24px}
 .media-card{border-radius:12px;border:1px solid var(--glass-border);overflow:hidden;height:var(--card-h);box-shadow:0 20px 70px rgba(0,0,0,0.6)}
 .media-card img{width:100%;height:100%;object-fit:cover}
 
